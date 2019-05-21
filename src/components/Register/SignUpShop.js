@@ -6,6 +6,29 @@ import { BrowserRouter as Router, Route,Link,Switch,Redirect} from 'react-router
   import TextField from '@material-ui/core/TextField';
   import PropTypes from 'prop-types';
   import MenuItem from '@material-ui/core/MenuItem';
+  import { withStyles } from '@material-ui/core/styles';
+
+  const styles = theme => ({
+    container: {
+      display: 'flex',
+      flexWrap: 'wrap',
+    },
+    textField: {
+      marginLeft: theme.spacing.unit,
+      marginRight: theme.spacing.unit,
+    },
+    dense: {
+      marginTop: 16,
+    },
+    menu: {
+      width: 200,
+    },
+  });
+
+
+
+
+
 
 
  class  SignUpShop extends React.Component {
@@ -55,79 +78,73 @@ import { BrowserRouter as Router, Route,Link,Switch,Redirect} from 'react-router
         
         
             render(){
-                const { title } = this.state
+                const { classes } = this.props;
                 return (
                     <div>
         
             <form>
 
-            ...
-                <form>
-                    <TextField
-                    name='title'
-                    label='Exercise'
-                    value={title}
-                    onChange={this.handleChange}
-                    margin='normal'
-                    />
-                </form>
+            
+               
 
                 
-                <label htmlFor="firstName">FirstName</label>
-                <input  
-                type ="text"
-                className = ""
-                placeholder = "First Name"
-                name = "firstName"
-               
-                onChange = {this.handleChange}
-
-                />
-
-                <br/><br/>
+                <TextField
+          id="filled-search"
+          label="First Name"
+          type="text"
+          className={classes.textField}
+          margin="normal"
+          variant="filled"
+          onChange = {this.handleChange}
+        />
+                <br/>
                
 
+                 
+                <TextField
+          id="filled-search"
+          label="Last Name"
+          type="text"
+          className={classes.textField}
+          margin="normal"
+          variant="filled"
+          onChange = {this.handleChange}
+        />
                
-                <label htmlFor="lastName">LastName</label>
-                <input  
-                type ="text"
-                className = ""
-                placeholder = "LastName"
-                name = "lastName"
+                <br/>
                
-                onChange = {this.handleChange}
 
-                />
+                <TextField
+          id="filled-email-input"
+          label="Email"
+          className={classes.textField}
+          type="email"
+          name="email"
+          autoComplete="email"
+          margin="normal"
+          variant="filled"
+          onChange = {this.handleChange}
 
-                <br/><br/>
-               
+        />
+            
+               <br/>
 
            
-            <label htmlFor="email">Email :</label>
-                <input  
-                type ="text"
-                className = ""
-                placeholder = "Yazan@example.com"
-                name = "email"
-                
-                onChange = {this.handleChange}
+               <TextField
+          id="filled-password-input"
+          label="Password"
+          className={classes.textField}
+          type="password"
+          autoComplete="current-password"
+          margin="normal"
+          variant="filled"
+          onChange = {this.handleChange}
 
-                />
-               <br/><br/>
+        />
 
-           
-            <label htmlFor="password">Password :</label>
-                <input  
-                type ="password"
-                className = ""
-                placeholder = "Enter Your Password"
-                name = "password"
-                
-                onChange = {this.handleChange}
+            
 
-                />
-
-                <br/><br/>
+                <br/>
 
                 
                 
@@ -139,4 +156,4 @@ import { BrowserRouter as Router, Route,Link,Switch,Redirect} from 'react-router
 }
 }
 
-export default SignUpShop;
+export default withStyles(styles)(SignUpShop);

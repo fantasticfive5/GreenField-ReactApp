@@ -7,8 +7,46 @@ import {
     Switch,
     Redirect
   } from 'react-router-dom'
+  import {
+    Paper,
+    Typography,
+    TextField,
+    Button 
+  } from '@material-ui/core'
+  import { withStyles } from '@material-ui/core/styles';
 
-class SignInShop extends React.Component {
+
+
+  const styles = theme => ({
+    container: {
+      display: 'flex',
+      flexWrap: 'wrap',
+    },
+    textField: {
+      marginLeft: theme.spacing.unit,
+      marginRight: theme.spacing.unit,
+    },
+    dense: {
+      marginTop: 16,
+    },
+    menu: {
+      width: 200,
+    },
+    button: {
+        margin: theme.spacing.unit,
+      },
+      input: {
+        display: 'none',
+      },
+  });
+
+
+
+
+
+
+
+  class SignInShop extends React.Component {
 
     constructor(props){
         super(props);
@@ -27,6 +65,13 @@ class SignInShop extends React.Component {
         console.log(e.target.value);
         this.setState({[e.target.name] : e.target.value});
     }
+
+      clicked() {
+          this.setState({
+            username :"",
+            password : ""
+          });
+      }
 
 
     click(event) {
@@ -47,36 +92,40 @@ class SignInShop extends React.Component {
 
 
     render(){
+        const { classes } = this.props;
+
         return(
             <div>
-               <form>
+               <form className={classes.container} noValidate autoComplete="off">
                 
-                <label htmlFor="username">FirstName</label>
-                <input  
-                type ="text"
-                className = ""
-                placeholder = "Enter Your User Name"
-                name = "username"
+               <TextField
+          id="filled-name"
+          label="username"
+          className={classes.textField}
+        //  value={this.clicked}
+          onChange={this.handleChange}
+          margin="normal"
+          variant="filled"
+          name = "username"
                
-                onChange = {this.handleChange}
+        />
 
-                />
+                
 
-                <br/><br/>
-               
+                <br/>
+               <TextField
+          id="filled-password-input"
+          label="Password"
+          className={classes.textField}
+          type="password"
+          autoComplete="current-password"
+         
+          name = "password"
+          margin="normal"
+          variant="filled"
+        />
 
-               
-                <label htmlFor="password">LastName</label>
-                <input  
-                type ="text"
-                className = ""
-                placeholder = "Enter Your Password"
-                name = "password"
-               
-                onChange = {this.handleChange}
-
-                />
-                <button type="submit" onClick={(event) => this.click(event)} >Submit</button>
+                <Button variant="contained" color="primary" className={classes.button} type="submit" onClick={(event) => this.click(event)} >Submit</Button>
                 </form>
             </div>
         )
@@ -86,4 +135,4 @@ class SignInShop extends React.Component {
 }
 
 
-export default SignInShop;
+export default withStyles(styles)(SignInShop);

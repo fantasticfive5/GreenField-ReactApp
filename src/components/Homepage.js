@@ -5,8 +5,24 @@ import {
   TextField,
   Button 
 } from '@material-ui/core'
+import { withStyles } from '@material-ui/core/styles';
 
-
+const styles = theme => ({
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+  },
+  dense: {
+    marginTop: 16,
+  },
+  menu: {
+    width: 200,
+  },
+});
 
 
 class Homepage extends Component {
@@ -22,18 +38,21 @@ class Homepage extends Component {
     [name]: value
   })
   render() {
-    const { title } = this.state;
+    const { classes } = this.props;
+
     return (
       <div>
-      ...
+      
       <form>
-        <TextField
-          name='title'
-          label='Exercise'
-          value={title}
-          onChange={this.handleChange}
-          margin='normal'
+      <TextField
+          id="filled-search"
+          label="Search field"
+          type="search"
+          className={classes.textField}
+          margin="normal"
+          variant="filled"
         />
+
       </form>
 
 
@@ -46,4 +65,4 @@ class Homepage extends Component {
 
 }
 
-export default Homepage;
+export default withStyles(styles)(Homepage);
