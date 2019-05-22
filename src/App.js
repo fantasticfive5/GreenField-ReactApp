@@ -1,15 +1,20 @@
-import React, { Component } from 'react';
-import Homepage from './components/Homepage';
+import React from 'react';
+// import Homepage from './components/Homepage';
+import Home from "./components/Home.js";
 
-class App extends Component {
-  state = {
-    
+
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    }
   }
-
   render() {
     return (
       <div className="App">
-        <Homepage />
+        <Home />
       </div>
     );
   }
