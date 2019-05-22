@@ -17,7 +17,7 @@ class SignUp extends Component {
     changed(e) {
         this.setState({ [e.target.name]: e.target.value });
     }
-
+ 
     render() {
 
         return (
@@ -26,7 +26,7 @@ class SignUp extends Component {
                 <input type="text" name="lasttName" placeholder="Enter Your LastName" onChange={this.changed.bind(this)} />
                 <input type="text" name="email" placeholder="Enter Your email" onChange={this.changed.bind(this)} />
                 <input type="password" name="password" placeholder="Enter Your Password" onChange={this.changed.bind(this)} />
-
+                <button> Submit</button>
             </div>
 
 

@@ -1,5 +1,8 @@
 import React from 'react';
 import Signincustomer from "./Signincustomer.js"
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+
 
 
 class Home extends React.Component {
@@ -27,13 +30,19 @@ class Home extends React.Component {
   render() {
     return (
       <div><center>
+        
         <header>
           <h1>
             Hello World !!!!
                       </h1>
-        </header>
+        </header><Router><div>
+        <button>go
+          <oute exact path="/" component={<Signincustomer />}  /> 
+        </button></div>
+          </Router>
 
-        {this.state.customer ? <Signincustomer /> : <button onClick={this.clicked}> Click Me!</button>}
+       
+        {/* {this.state.customer ? (<Signincustomer />) : <button onClick={this.clicked}> Click Me!</button>} */}
         {/* <button onClick={this.clicked}>
           Click meeeeeee!
         </button> */}
