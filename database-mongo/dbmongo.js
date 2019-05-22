@@ -11,10 +11,12 @@ db.once('open', function () {
 });
 //This For USer Information YY
 const usersSchema = new Schema({
-    username: {
+   
         firstName: { type: String, trim: true, required: true },
         lastName: { type: String, trim: true, required: true },
-    },
+        userName: { type: String, trim: true, required: true },
+        
+    
     email: {
         type: String,
         required: [true, 'Email Field is required'],
