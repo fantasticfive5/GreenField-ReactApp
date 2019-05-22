@@ -18,12 +18,15 @@ class SigninOwner extends Component {
     render() {
         return (
             <div className="sign">
-               <h1>
-                   SignIn Please !
+                <h1>
+                    SignIn Please !
                </h1>
+                shopname : < input type="text" placeholder="Enter Your ShopName" value={this.props.shopname} name="shop" /><br></br>
+                phoneNumber : < input type="Number" placeholder="Enter Your PhoneNumber" value={this.props.phoneNumber} name="number" /><br></br>
+                <button onClick={() => this.props.signIn()} > SigninShop </button><br></br>
 
             </div>
-        )
+        );
 
 
 
