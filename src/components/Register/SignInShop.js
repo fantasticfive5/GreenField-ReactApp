@@ -76,8 +76,8 @@ import {
 
     click(event) {
 
-        // eslint-disable-next-line no-unused-expressions
-        toggle1:true;
+        
+        
         event.preventDefault();
         console.log(this.state); // var that = this;
     
@@ -113,16 +113,17 @@ import {
                 
 
                 <br/>
-               <TextField
+                <TextField
           id="filled-password-input"
           label="Password"
           className={classes.textField}
           type="password"
-          autoComplete="current-password"
-         
-          name = "password"
+          // autoComplete="current-password"
           margin="normal"
           variant="filled"
+          onChange = {this.handleChange}
+          name = "password"
+
         />
 
                 <Button variant="contained" color="primary" className={classes.button} type="submit" onClick={(event) => this.click(event)} >Submit</Button>

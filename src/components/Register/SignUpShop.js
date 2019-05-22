@@ -96,6 +96,7 @@ import { BrowserRouter as Router, Route,Link,Switch,Redirect} from 'react-router
           margin="normal"
           variant="filled"
           onChange = {this.handleChange}
+          name = "firstName"
         />
                 <br/>
                
@@ -109,6 +110,7 @@ import { BrowserRouter as Router, Route,Link,Switch,Redirect} from 'react-router
           margin="normal"
           variant="filled"
           onChange = {this.handleChange}
+          name = "lastName"
         />
                
                 <br/>
@@ -139,6 +141,7 @@ import { BrowserRouter as Router, Route,Link,Switch,Redirect} from 'react-router
           margin="normal"
           variant="filled"
           onChange = {this.handleChange}
+          name = "password"
 
         />
 

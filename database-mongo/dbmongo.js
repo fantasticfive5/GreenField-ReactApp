@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/car', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost/Shop', { useNewUrlParser: true });
 const Schema = mongoose.Schema;
 
 const db = mongoose.connection;
