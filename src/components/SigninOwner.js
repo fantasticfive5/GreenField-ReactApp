@@ -32,3 +32,5 @@ class SigninOwner extends Component {
 
     }
 }
+
+export default SigninOwner;
