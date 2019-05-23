@@ -8,8 +8,8 @@ import {
     Redirect
   } from 'react-router-dom'
   import {
-    Paper,
-    Typography,
+    // Paper,
+    // Typography,
     TextField,
     Button 
   } from '@material-ui/core'
@@ -76,14 +76,14 @@ import {
 
     click(event) {
 
-        // eslint-disable-next-line no-unused-expressions
-        toggle1:true;
+        
+        
         event.preventDefault();
         console.log(this.state); // var that = this;
     
         $.ajax({
           type: 'POST',
-          url: '/SignIn',
+          url: '/signin',
           data: this.state,
           dataType: 'json'
         });
@@ -113,19 +113,25 @@ import {
                 
 
                 <br/>
-               <TextField
+                <TextField
           id="filled-password-input"
           label="Password"
           className={classes.textField}
           type="password"
-          autoComplete="current-password"
-         
-          name = "password"
+          // autoComplete="current-password"
           margin="normal"
           variant="filled"
-        />
+          onChange = {this.handleChange}
+          name = "password"
+
+             />
 
                 <Button variant="contained" color="primary" className={classes.button} type="submit" onClick={(event) => this.click(event)} >Submit</Button>
+                <p>
+            If you don't have an account <br>
+            </br>
+            please <Link to="/SignUpShop">Signup </Link>
+          </p>
                 </form>
             </div>
         )

@@ -1,7 +1,10 @@
+/* eslint-disable no-dupe-keys */
 /* eslint-disable no-unused-vars */
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/shop', { useNewUrlParser: true });
 const Schema = mongoose.Schema;
+
+
+mongoose.connect('mongodb://localhost/myNewData', { useNewUrlParser: true ,createIndexes : true });
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -11,10 +14,10 @@ db.once('open', function () {
 });
 //This For USer Information YY
 const usersSchema = new Schema({
-    username: {
+        userName : {type : String , required : true},    
         firstName: { type: String, trim: true, required: true },
         lastName: { type: String, trim: true, required: true },
-    },
+
     email: {
         type: String,
         required: [true, 'Email Field is required'],
@@ -22,7 +25,12 @@ const usersSchema = new Schema({
         match: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
     },
 
-    password: { type: String, required: true }
+    password: { type: String, required: true },
+
+    date : {
+        type : Date ,
+        default : Date.now
+    }
 });
 
 //This Schema for USer Information about the car
@@ -53,21 +61,21 @@ const shops = mongoose.model('shopinformation', shop);
 
 
 
-let save = (data => {
+// let save = (data => {
 
-    for (var i = 0; i < data.length; i++) {
+//     for (var i = 0; i < data.length; i++) {
 
-        var obj = {
+//         var obj = {
 
-                username: data[i].username,
-            email: data[i].email,
-            password: data[i].password
-        }
+//                 username: data[i].username,
+//             email: data[i].email,
+//             password: data[i].password
+//         }
 
-        var rebo = new usersSchema(obj);
-        rebo.save();
-    }
-})
+//         var rebo = new usersSchema(obj);
+//         rebo.save();
+//     }
+// })
 
 
 module.exports.user = user;
