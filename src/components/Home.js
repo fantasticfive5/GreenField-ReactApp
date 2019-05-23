@@ -1,7 +1,12 @@
 import React from 'react';
-import Signincustomer from "./Signincustomer.js"
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-
+// import Signincustomer from "./Signincustomer.js"
+// import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Signincustomer from "./Signincustomer.js";
+// import SignUpCustomer from "./SignUpCustomer";
+// import SignUpShop from './SignUpShop';
+import SignInShop from './SignInShop.js';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+// , Switch, Redirect
 
 
 
@@ -29,18 +34,46 @@ class Home extends React.Component {
 
   render() {
     return (
+      <form>
       <div><center>
-        
+
         <header>
           <h1>
             Hello World !!!!
-                      </h1>
-        </header><Router><div>
-        <button>go
-          <oute exact path="/" component={<Signincustomer />}  /> 
-        </button></div>
-          </Router>
+          </h1>
+        </header>
 
+        
+
+
+          <Link to="/SignInCustomer">
+            <button>
+              Customer 
+            </button>
+          </Link>
+          <br></br>
+
+          <Link to="/SignInShop">
+            <button>
+              Shop Owner
+            </button>
+          </Link>
+
+          {/* <br></br>
+          <br></br>
+          <br></br> */}
+
+          {/* <Link to="/SignInShop">
+            <button>
+              Shop Sign In
+            </button>
+          </Link> */}
+
+          {/* <Route path="/Home" component={Home} /> */}
+         
+          {/* <Route path="/SignUpCustomer" component={SignUpCustomer} /> */}
+          {/* <Route path="/SignInShop" component={SignInShop} />
+          <Route path="/SignUpShop" component={SignUpShop} /> */}
        
         {/* {this.state.customer ? (<Signincustomer />) : <button onClick={this.clicked}> Click Me!</button>} */}
         {/* <button onClick={this.clicked}>
@@ -54,6 +87,7 @@ class Home extends React.Component {
         </toggle> */}
       </center>
       </div>
+      </form>
     );
   }
 }
