@@ -40,7 +40,7 @@ class App extends React.Component {
           <Route path="/SignInShop" component={SignInShop} />
           <Route path="/SignUpShop" component={SignUpShop} />
         </Router>
-    
+     
     );
   }
   // updateState(data) {
