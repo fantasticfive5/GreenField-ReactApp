@@ -1,4 +1,4 @@
-// const express = require('express');
+const express = require('express');
 // const bodyParser = require('body-parser');
 // const mongoose = require('mongoose');
 // const { userName } = require('./database-mongo/dbmongo');
@@ -10,7 +10,7 @@
 // const app = express();
 // const db = require('../database-mongo/dbmongo');
 
-// // const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 // app.use(bodyParser.urlencoded({ extended: true }))
 // app.use(bodyParser.json());
 // app.use(express.static(__dirname + '/../react-client/dist'));
@@ -119,9 +119,9 @@
 
 // let port = 3000;
 
-// app.listen(port, function() {
-//   console.log(`listening on port ${port}`);
-// });
+app.listen(port, function() {
+  console.log(`listening on port ${port}`);
+});
 
 
 // // const HTTP_CREATED = 201;
