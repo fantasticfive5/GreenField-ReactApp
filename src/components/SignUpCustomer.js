@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
+// import Home from "./components/Home.js";
+import Signincustomer from "./Signincustomer.js";
+// import SignUpShop from './components/SignUpShop';
+// import SignInShop from './components/SignInShop';
+import { BrowserRouter as Router, Route, Link, Switch, Redirect } from 'react-router-dom';
 //  import { Button, Modal, OverlayTrigger, Popover, Tooltip, Nav, NavItem, Row, Col, FormGroup, FieldGroup, Checkbox,Form } from 'react-bootstrap'
 
-class SignUp extends Component {
+class Signupcustomer extends Component {
     constructor(props) {
         super(props);
         this.changed = this.changed.bind(this);
@@ -17,7 +22,7 @@ class SignUp extends Component {
     changed(e) {
         this.setState({ [e.target.name]: e.target.value });
     }
-
+ 
     render() {
 
         return (
@@ -26,7 +31,7 @@ class SignUp extends Component {
                 <input type="text" name="lasttName" placeholder="Enter Your LastName" onChange={this.changed.bind(this)} />
                 <input type="text" name="email" placeholder="Enter Your email" onChange={this.changed.bind(this)} />
                 <input type="password" name="password" placeholder="Enter Your Password" onChange={this.changed.bind(this)} />
-
+                <button> Submit</button>
             </div>
 
 
@@ -37,4 +42,4 @@ class SignUp extends Component {
 
 }
 
-export default SignUp;
+export default Signupcustomer;
