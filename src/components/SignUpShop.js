@@ -1,11 +1,11 @@
 /* eslint-disable no-labels */
 import React from 'react'
 import $ from 'jquery';
-import { BrowserRouter as Router, Route,Link,Switch,Redirect} from 'react-router-dom';
+// import { BrowserRouter as Router, Route,Link,Switch,Redirect} from 'react-router-dom';
   import Button from '@material-ui/core/Button';
   import TextField from '@material-ui/core/TextField';
-  import PropTypes from 'prop-types';
-  import MenuItem from '@material-ui/core/MenuItem';
+  // import PropTypes from 'prop-types';
+  // import MenuItem from '@material-ui/core/MenuItem';
   import { withStyles } from '@material-ui/core/styles';
 
   const styles = theme => ({
@@ -62,7 +62,7 @@ import { BrowserRouter as Router, Route,Link,Switch,Redirect} from 'react-router
         click(event) {
             
             // eslint-disable-next-line no-unused-expressions
-            toggle1:true;
+            // toggle1:true;
             event.preventDefault();
             console.log(this.state); // var that = this;
             

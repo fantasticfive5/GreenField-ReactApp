@@ -8,8 +8,8 @@ import {
     Redirect
   } from 'react-router-dom'
   import {
-    Paper,
-    Typography,
+    // Paper,
+    // Typography,
     TextField,
     Button 
   } from '@material-ui/core'
@@ -127,6 +127,11 @@ import {
              />
 
                 <Button variant="contained" color="primary" className={classes.button} type="submit" onClick={(event) => this.click(event)} >Submit</Button>
+                <p>
+            If you don't have an account <br>
+            </br>
+            please <Link to="/SignUpShop">Signup </Link>
+          </p>
                 </form>
             </div>
         )

@@ -23,4 +23,8 @@ tmpnodejsnpm-cache# See https://help.github.com/articles/ignoring-files/ for mor
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+<<<<<<< HEAD
+
+=======
 // eslint-disable-next-line
+>>>>>>> 56bb6e4ea16139dcb5af9bf5e6ddd21f358f4cc6
