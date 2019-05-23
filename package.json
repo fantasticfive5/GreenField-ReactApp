@@ -14,7 +14,14 @@
     "popper.js": "^1.15.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+<<<<<<< HEAD
     "react-scripts": "^3.0.1"
+=======
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "^3.0.1",
+    "semantic-ui-react": "^0.87.1",
+    "webpack-cli": "^3.3.2"
+>>>>>>> 7fdfbf59cb5094fca55eba9c6f7f162b9bce800f
   },
   "scripts": {
     "server-dev": "nodemon database-mongo/dbmongo.js",

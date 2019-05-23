@@ -8,30 +8,32 @@ const jwt = require('jsonwebtoken');
 // UNCOMMENT THE DATABASE YOU'D LIKE TO USE
 //Update-Projec
 
-const app = express();
+// const app = express();
+// const db = require('../database-mongo/dbmongo');
+
 const port = process.env.PORT || 3000;
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(bodyParser.json());
-app.use(express.static(__dirname + '/../react-client/dist'));
+// app.use(bodyParser.urlencoded({ extended: true }))
+// app.use(bodyParser.json());
+// app.use(express.static(__dirname + '/../react-client/dist'));
 
 
 
-app.get('/', function (req, res) {
-  items.selectAll(function (err, data) {
-    if (err) {
-      res.sendStatus(500);
-    } else {
-      res.json(data);
-      console.log(data)
-    }
-  });
-});
+// // app.get('/', function (req, res) {
+// //   items.selectAll(function (err, data) {
+// //     if (err) {
+// //       res.sendStatus(500);
+// //     } else {
+// //       res.json(data);
+// //       console.log(data)
+// //     }
+// //   });
+// // });
 
 
-
-app.get("/", (req, res) => {
-  res.send(" This is working !")
-})
+// app.get('/' , function(req , res){
+   
+//   res.send("Hello WOrld");
+// });
 
 app.post('/signinShop', (req, res) => {
   const email = req.body.email;
