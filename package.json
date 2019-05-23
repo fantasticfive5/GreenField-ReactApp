@@ -20,6 +20,7 @@
   },
   "scripts": {
     "server-dev": "nodemon database-mongo/dbmongo.js",
+    "run":"nodemon index.js",
     "react-dev": "webpack -d --watch",
     "start": "react-scripts start",
     "build": "react-scripts build",

@@ -13,19 +13,26 @@ import SignInShop from './components/SignInShop';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 // import Navbar from "bootstrap";
 // , Switch, Redirect 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       repos: []
 
-    }
+    } 
   }
 
+
   render() {
+    const color = {
+    backgroundColor: 'darkgrey',
+  }
     return (
       
-        <Router>
+
+      <form style={color}>
+        <Router >
 
                
             <Link to="/Home">
@@ -40,7 +47,7 @@ class App extends React.Component {
           <Route path="/SignInShop" component={SignInShop} />
           <Route path="/SignUpShop" component={SignUpShop} />
         </Router>
-     
+     </form>
     );
   }
   // updateState(data) {
