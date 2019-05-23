@@ -1,10 +1,14 @@
 /* eslint-disable no-unused-vars */
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/car', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost/Shop', { useNewUrlParser: true });
 const Schema = mongoose.Schema;
+// const CONNECTION_URL = mongodb+srv://dbShop:'+proccess.env.MONGO_ATLAS_PW '+'<123>@cluster0-t1d4x.mongodb.net/test?retryWrites=true
+
 
 const db = mongoose.connection;
+
 db.on('error', console.error.bind(console, 'connection error:'));
+
 db.once('open', function () {
 
     console.log("We 're connected! ^__^")
@@ -37,7 +41,12 @@ const shop = new Schema({
 
 // const test = new usersSchema({firstName : "yazan" ,lastName : "Najjar" , email : "YAZANANANANAN" , phoneNumber: 123123 , password : "ASSAD" })
 
-
+usersSchema.methods.speak = function () {
+    var greeting = this.name
+      ? "Meow name is " + this.name
+      : "I don't have a name";
+    console.log(greeting);
+  }
 
 const user = mongoose.model('users', usersSchema);
 const shops = mongoose.model('shopinformation', shop);
