@@ -1,48 +1,153 @@
-import React from 'react';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import $ from 'jquery';
-// import Popper from 'popper.js';
-// import 'bootstrap/dist/js/bootstrap.bundle.min';
-// import $ from 'jquery';
-// import Homepage from './components/Homepage';
+
+
+import React, { Component } from 'react';
+// import logo from './logo.svg';
+import './App.css';
 import Home from "./components/Home.js";
-import Signincustomer from "./components/Signincustomer";
+import Homepage from "./components/Homepage"
+import SignInCustomer from "./components/Signincustomer";
 import SignUpCustomer from "./components/SignUpCustomer";
 import SignUpShop from './components/SignUpShop';
 import SignInShop from './components/SignInShop';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-// import Navbar from "bootstrap";
-// , Switch, Redirect 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      repos: []
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-    }
-  }
 
+// const Home = () => (
+//   <div>
+//     Home
+//       </div>
+// )
+
+// const Homepage = () => (
+//   <div>
+//     Homepage
+//       </div>
+// )
+
+// const SignInCustomer = () => (
+//   <div>
+//     SignInCustomer
+//       </div>
+// )
+
+// const SignInShop = () => (
+//   <div>
+//     SignInShop
+//       </div>
+// )
+
+// const SignUpCustomer = () => (
+//   <div>
+//     SignUpCustomer
+//       </div>
+// )
+//       const SignUpShop = () => (
+//   <div>
+//     SignUpShop
+//         </div>
+
+//     )
+
+const MainMenu = () => {
+  return (
+    <div>
+      <Link to="/Home">
+        <button>Home</button>
+      </Link>
+      <Link to="/Homepage">
+        <button>Homepage</button>
+      </Link>
+      <Link to="/SignInCustomer">
+        <button>SignInCustomer</button>
+      </Link>
+      <Link to="/SignInShop">
+        <button>SignInShop</button>
+      </Link>
+      <Link to="/SignUpCustomer">
+        <button>SignUpCustomer</button>
+      </Link>
+
+      <Link to="/SignUpShop">
+        <button>SignUpShop</button>
+      </Link>
+    </div>
+  );
+};
+
+class App extends Component {
   render() {
     return (
-      
-        <Router>
-
-               
-            <Link to="/Home">
-              <button>
-                Home
-              </button>
-            </Link> 
-            
-          <Route path="/Home" component={Home} />
-          <Route path="/SignInCustomer" component={Signincustomer} />
-          <Route path="/SignUpCustomer" component={SignUpCustomer} />
-          <Route path="/SignInShop" component={SignInShop} />
-          <Route path="/SignUpShop" component={SignUpShop} />
-        </Router>
-     
+      <Router>
+        <div className="App">
+          <header className="App-header">
+            {/* <img src={logo} className="App-logo" alt="logo" /> */}
+            <h1 className="App-title">Welcome to home page </h1>
+            <MainMenu />
+          </header>
+          <div>
+            <Route exact path="/Home" component={Home} />
+            <Route exact path="/Homepage" component={Homepage} />
+            <Route exact path="/SignInCustomer" component={SignInCustomer} />
+            <Route exact path="/SignInShop" component={SignInShop} />
+            <Route exact path="/SignUpCustomer" component={SignUpCustomer} />
+            <Route exact path="/SignUpShop" component={SignUpShop} />
+            {/* <Route exact path="/presence" component={Presence} /> */}
+          </div>
+        </div>
+      </Router>
     );
   }
+}
+
+export default App;
+
+
+
+// import React from 'react';
+// // import 'bootstrap/dist/css/bootstrap.min.css';
+// // import $ from 'jquery';
+// // import Popper from 'popper.js';
+// // import 'bootstrap/dist/js/bootstrap.bundle.min';
+// // import $ from 'jquery';
+// // import Homepage from './components/Homepage';
+// import Home from "./components/Home.js";
+// import Signincustomer from "./components/Signincustomer";
+// import SignUpCustomer from "./components/SignUpCustomer";
+// import SignUpShop from './components/SignUpShop';
+// import SignInShop from './components/SignInShop';
+// import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+// // import Navbar from "bootstrap";
+// // , Switch, Redirect 
+// class App extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       repos: []
+
+//     }
+//   }
+
+//   render() {
+//     return (
+
+//         <Router>
+
+
+//             <Link to="/Home">
+//               <button>
+//                 Home
+//               </button>
+//             </Link> 
+
+//           <Route path="/Home" component={Home} />
+//           <Route path="/SignInCustomer" component={Signincustomer} />
+//           <Route path="/SignUpCustomer" component={SignUpCustomer} />
+//           <Route path="/SignInShop" component={SignInShop} />
+//           <Route path="/SignUpShop" component={SignUpShop} />
+//         </Router>
+
+//     );
+//   }
   // updateState(data) {
   //   this.setState({
   //     repos: data
@@ -78,6 +183,6 @@ class App extends React.Component {
   //   );
   // }
 
-}
+// }
 
-export default App;
+// export default App;
