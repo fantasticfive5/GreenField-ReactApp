@@ -12,7 +12,7 @@ db.once('open', function () {
 
     console.log("We 're connected! ^__^")
 });
-//This For USer Information YY
+//This For User Information YY
 const usersSchema = new Schema({
         userName : {type : String , required : true},    
         firstName: { type: String, trim: true, required: true },
@@ -56,26 +56,28 @@ const shop = new Schema({
 
 
 
-const user = mongoose.model('users', usersSchema);
-const shops = mongoose.model('shopinformation', shop);
+let user = mongoose.model('users', usersSchema);
+let shops = mongoose.model('shopinformation', shop);
 
 
 
-// let save = (data => {
+let save = (data => {
 
-//     for (var i = 0; i < data.length; i++) {
+    for (var i = 0; i < data.length; i++) {
 
-//         var obj = {
+        var obj = {
 
-//                 username: data[i].username,
-//             email: data[i].email,
-//             password: data[i].password
-//         }
+           username: data[i].username,
+            firstName : data[i].firstName,
+            lastName : data[i].lastName,
+           email: data[i].email,
+            password: data[i].password
+        }
 
-//         var rebo = new usersSchema(obj);
-//         rebo.save();
-//     }
-// })
+        var rebo = new usersSchema(obj);
+        rebo.save();
+    }
+})
 
 
 module.exports.user = user;

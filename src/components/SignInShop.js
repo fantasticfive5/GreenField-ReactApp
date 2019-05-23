@@ -83,7 +83,7 @@ import {
     
         $.ajax({
           type: 'POST',
-          url: '/signin',
+          url: '/signin ',
           data: this.state,
           dataType: 'json'
         });

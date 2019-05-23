@@ -77,6 +77,8 @@ app.post('/signup' , function(req, res){
                 
         });
 
+    res.send("Hello World");
+
 });
 
 
@@ -86,7 +88,7 @@ app.post('/signin' , function(req , res){
     const password = req.body.password;
 
     //Check if user exists in the database
-    User.findOne({username : username}).then(function(user){
+    this.User.findOne({username : username}).then(function(user){
         if(!user) {
             return res.status(HTTP_UNAUTHORIZED).send({error : 'Please sign up'})
         }
