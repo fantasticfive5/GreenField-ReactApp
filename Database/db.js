@@ -1,24 +1,23 @@
+/* eslint-disable no-dupe-keys */
 /* eslint-disable no-unused-vars */
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/Shop', { useNewUrlParser: true });
 const Schema = mongoose.Schema;
-// const CONNECTION_URL = mongodb+srv://dbShop:'+proccess.env.MONGO_ATLAS_PW '+'<123>@cluster0-t1d4x.mongodb.net/test?retryWrites=true
 
+
+mongoose.connect('mongodb://localhost/myNewData', { useNewUrlParser: true ,createIndexes : true });
 
 const db = mongoose.connection;
-
 db.on('error', console.error.bind(console, 'connection error:'));
-
 db.once('open', function () {
 
     console.log("We 're connected! ^__^")
 });
-//This For USer Information YY
+//This For User Information YY
 const usersSchema = new Schema({
-    username: {
+        userName : {type : String , required : true},    
         firstName: { type: String, trim: true, required: true },
         lastName: { type: String, trim: true, required: true },
-    },
+
     email: {
         type: String,
         required: [true, 'Email Field is required'],
@@ -26,30 +25,39 @@ const usersSchema = new Schema({
         match: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
     },
 
-    password: { type: String, required: true }
+    password: { type: String, required: true },
+
+    date : {
+        type : Date ,
+        default : Date.now
+    }
 });
 
 //This Schema for USer Information about the car
 const shop = new Schema({
 
-    shopname: { type: String, required: true },
+    shopname:     { type: String, required: true },
     shoplocation: { type: String, coordinates: [Number] },
     workkinghour: { type: Number },
+
+    specialties:  { type: String },
+    phoneNumber:  { type: Number, required: true },
+
+
+
+
+
     specialties: { type: String },
     phoneNumber: { type: Number, required: true }
+
 });
 
 // const test = new usersSchema({firstName : "yazan" ,lastName : "Najjar" , email : "YAZANANANANAN" , phoneNumber: 123123 , password : "ASSAD" })
 
-usersSchema.methods.speak = function () {
-    var greeting = this.name
-      ? "Meow name is " + this.name
-      : "I don't have a name";
-    console.log(greeting);
-  }
 
-const user = mongoose.model('users', usersSchema);
-const shops = mongoose.model('shopinformation', shop);
+
+let user = mongoose.model('users', usersSchema);
+let shops = mongoose.model('shopinformation', shop);
 
 
 
@@ -59,8 +67,10 @@ let save = (data => {
 
         var obj = {
 
-            username: data[i].username,
-            email: data[i].email,
+           username: data[i].username,
+            firstName : data[i].firstName,
+            lastName : data[i].lastName,
+           email: data[i].email,
             password: data[i].password
         }
 
