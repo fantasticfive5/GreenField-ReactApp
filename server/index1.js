@@ -1,37 +1,47 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const { users, shop } = require("../database-mongo/dbmongo");
+const { users, shop } = require("../Database/db.js");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const pino = require('express-pino-logger')();
 
-
+const url = 'mongodb://localhost:3000'
+ 
+mongoose.connect(url, { useNewUrlParser: true }).then(connection => {
+  console.log('You are connected to mongo Database :)');
+}).catch(function(err){
+  console.log(err);
+});
 const app = express();
-const db = require('../database-mongo/dbmongo');
+// const db = require('../database-mongo/dbmongo');
 
 // const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json());
+app.use(pino);
 app.use(express.static(__dirname + '/../react-client/dist'));
 
 
 
-app.get('/', function (req, res) {
-  items.selectAll(function (err, data) {
-    if (err) {
-      res.sendStatus(500);
-    } else {
-      res.json(data);
-      console.log(data)
-    }
-  });
-});
+// app.get('/', function (req, res) {
+//   users.find(function (err, data) {
+//     if (err) {
+//       res.sendStatus(500);
+//     } else {
+//       res.json(data);
+//       console.log(data)
+//     }
+//   });
+// });
 
 
 app.get('/' , function(req , res){
    
-  res.send("Hello WOrld");
+  res.send("Hi ...");
 });
+
+
 
 app.post('/signinUser', (req, res) => {
   const email = req.body.email;
@@ -55,24 +65,27 @@ app.post('/signinUser', (req, res) => {
 app.post('/signUp', (req, res) => {
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
+  const email = req.body.email;
   const password = req.body.password;
   const passowrdHash = bcrypt.hashSync(password, 8);
-  userName.create({ username: { firstName: firstName, lastName: lastName }, password: passowrdHash }).then(function () {
-    return res.status(HTTP_Created).send("Sign up successful");
-  }).catch(function (err) {
-    if (err.code === 11000) {
-      return res.status(HTTP_BAD_REQUEST).send("You can't use this username")
-    }
-    return res.status(HTTP_SERVER_ERROR).send('Server Error');
-  });
-  console.log("ok")
-  res.send("Done")
+  // users.create({ username: { firstName: firstName, lastName: lastName }, email : email, password: passowrdHash }).then(function () {
+  //   console.log("Sign Up");
+  //   return res.status(HTTP_Created).send("Sign up successful");
+  // }).catch(function (err) {
+  //   if (err.code === 11000) {
+  //     return res.status(HTTP_BAD_REQUEST).send("You can't use this username")
+  //   }
+  //   return res.status(HTTP_SERVER_ERROR).send('Server Error');
+  // });
+  // console.log("ok")
+  // res.send("Done")
+  console.log( firstName, lastName, email, password)
 });
 
 app.post('/signinClient', (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
-  userName.findOne({ firstName: firstName }).then(function (user) {
+  users.findOne({ firstName: firstName }).then(function (user) {
     if (!userName) {
       return res.status(HTTP_UNAUTHORIZED).send({ error: "You Can Sign Up Here" });
     }
@@ -128,7 +141,7 @@ app.get('/SignIn', function (req, res) {
 
 let port = 3001;
 
-app.listen(port, function() {
+app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
 

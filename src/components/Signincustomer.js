@@ -33,12 +33,10 @@ class Signincustomer extends Component {
   }
 
   click() {
-
     // event.preventDefault();
     // event.preventDefault();
     // console.log(this.state);
     // var that = this;
-
     $.ajax({
       type: 'POST',
       url: '/signinUser',
