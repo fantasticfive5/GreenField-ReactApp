@@ -3,7 +3,10 @@ import React, { Component } from 'react';
 class CustopmerHomepage extends Component {
   render() {
     var shops = [
-      "motasem","raggad"
+      "motasem",
+      "phoneNumber:0780437773"
+      
+      
       
     ];
 

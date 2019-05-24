@@ -54,7 +54,7 @@ class Home extends React.Component {
           </Link>
           <br></br>
           
-          <Link to="/SignInShop">
+          <Link to="/SignUpShop">
             <button>
               Shop Owner
             </button>

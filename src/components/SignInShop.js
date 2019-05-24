@@ -1,3 +1,6 @@
+
+  // ---------- this page is not used -----------//
+
 import React from 'react';
 import $ from 'jquery';
 import {
@@ -125,8 +128,11 @@ import {
           name = "password"
 
              />
+              <Link to="/CustopmerHomepage"> 
+              <button variant="contained" color="primary" className={classes.button} type="submit" onClick={(event) => this.click(event)} >Sign In</button>
 
-                <Button variant="contained" color="primary" className={classes.button} type="submit" onClick={(event) => this.click(event)} >Submit</Button>
+              
+              </Link>
                 <p>
             If you don't have an account <br>
             </br>
