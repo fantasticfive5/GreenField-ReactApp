@@ -107,19 +107,6 @@ app.post('/signinClient', (req, res) => {
 
 
 
-  app.post('/SignUp', function (req, res) {
-  // TODO - your code here!
-  // This route should take the github username provided
-  // and get the repo information from the github API, then
-  // save the repo information in the database
-  let username = req.body.username;
-  //console.log(username)
-  // github.getReposByUsername(username, function(body){
-  // 	console.log(typeof body)
-  // 	db.save(JSON.parse(body));
-  // 	//res.send(body);
-  // })
-});
 
 
 

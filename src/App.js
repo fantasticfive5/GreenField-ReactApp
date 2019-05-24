@@ -24,13 +24,11 @@ class App extends React.Component {
 
 
   render() {
-    const color = {
-    backgroundColor: 'darkgrey',
-  }
+ 
     return (
       
 
-      <form style={color}>
+      <form><center>
         <Router >
 
                
@@ -46,6 +44,7 @@ class App extends React.Component {
           <Route path="/SignInShop" component={SignInShop} />
           <Route path="/SignUpShop" component={SignUpShop} />
         </Router>
+        </center>
      </form>
     );
   }

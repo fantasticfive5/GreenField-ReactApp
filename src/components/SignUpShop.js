@@ -83,7 +83,7 @@ import $ from 'jquery';
                     <div>
         
             <form>
-
+              <body><center>
             
                
 
@@ -153,6 +153,8 @@ import $ from 'jquery';
                 
 
                 <Button variant="contained" color="primary" type="submit" onClick={(event) => this.click(event)} >Submit</Button>
+                </center>
+                </body>
            </form>
         </div>
     )
