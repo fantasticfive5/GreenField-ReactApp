@@ -95,8 +95,8 @@ import {
         const { classes } = this.props;
 
         return(
-            <div>
-               <form className={classes.container} noValidate autoComplete="off">
+            <div><center>
+               <form className={classes.container} noValidate autoComplete="off"> <body>
                 
                <TextField
           id="filled-name"
@@ -132,7 +132,8 @@ import {
             </br>
             please <Link to="/SignUpShop">Signup </Link>
           </p>
-                </form>
+          </body>
+                </form></center>
             </div>
         )
     }

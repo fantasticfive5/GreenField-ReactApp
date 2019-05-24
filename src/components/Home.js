@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 
 class Home extends React.Component {
-
+ 
 
   constructor(props) {
     super(props)
@@ -35,24 +35,25 @@ class Home extends React.Component {
   render() {
     return (
       <form>
-      <div><center>
+      <div><center><div>
 
         <header>
           <h1>
-            Hello World !!!!
+            Welcome to Ma3ak 
           </h1>
         </header>
 
-        
-
-
+        </div>
+      <body>
+      <div><center> 
+        Sign in as a <br></br>
           <Link to="/SignInCustomer">
             <button>
               Customer 
             </button>
           </Link>
           <br></br>
-
+          
           <Link to="/SignInShop">
             <button>
               Shop Owner
@@ -85,6 +86,9 @@ class Home extends React.Component {
         <toggle>
           { <Signincustomer /> }
         </toggle> */}
+        </center>
+        </div>
+        </body>
       </center>
       </div>
       </form>

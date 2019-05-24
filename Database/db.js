@@ -4,14 +4,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
-mongoose.connect('mongodb://localhost/myNewData', { useNewUrlParser: true ,createIndexes : true });
+// mongoose.connect('mongodb://localhost/myNewData', { useNewUrlParser: true ,createIndexes : true });
 
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function () {
+// const db = mongoose.connection;
+// db.on('error', console.error.bind(console, 'connection error:'));
+// db.once('open', function () {
 
-    console.log("We 're connected! ^__^")
-});
+//     console.log("good job you are connected :D")
+// });
 //This For User Information YY
 const usersSchema = new Schema({
         userName : {type : String , required : true},    
@@ -55,9 +55,8 @@ const shop = new Schema({
 // const test = new usersSchema({firstName : "yazan" ,lastName : "Najjar" , email : "YAZANANANANAN" , phoneNumber: 123123 , password : "ASSAD" })
 
 
-
-let user = mongoose.model('users', usersSchema);
-let shops = mongoose.model('shopinformation', shop);
+const users = mongoose.model('users', usersSchema);
+const shops = mongoose.model('shops', shop);
 
 
 
@@ -80,5 +79,5 @@ let save = (data => {
 })
 
 
-module.exports.user = user;
+module.exports.users = users;
 module.exports.shop = shop;

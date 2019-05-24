@@ -7,15 +7,15 @@
     "@material-ui/icons": "^3.0.2",
     "bcrypt": "^3.0.6",
     "bluebird": "^3.5.4",
-    "body-parser": "^1.19.0",
     "bootstrap": "^4.3.1",
     "cors": "^2.8.5",
-    "express": "^4.17.0",
     "jquery": "^3.4.1",
     "jsonwebtoken": "^8.5.1",
+    "mongod": "^2.0.0",
     "mongodb": "^3.2.5",
     "mongoose": "^5.5.11",
     "mongoose-version": "^1.1.0",
+    "pino": "^5.12.5",
     "popper.js": "^1.15.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -25,12 +25,17 @@
     "webpack-cli": "^3.3.2"
   },
   "scripts": {
-    "server": "nodemon server/server.js",
+    "server": "node-env-run server --exec nodemon | pino-colada",
+    "dev": "run-p server start",
+    "server-dev": "nodemon database-mongo/dbmongo.js",
+    "server-node": "nodemon server/index1.js",
+    "run": "nodemon index.js",
     "react-dev": "webpack -d --watch",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "proxy": "http://localhost:3001"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -48,6 +53,12 @@
     ]
   },
   "devDependencies": {
-    "nodemon": "^1.19.0"
+    "body-parser": "^1.19.0",
+    "express": "^4.17.0",
+    "express-pino-logger": "^4.0.0",
+    "node-env-run": "^3.0.2",
+    "nodemon": "^1.19.0",
+    "npm-run-all": "^4.1.5",
+    "pino-colada": "^1.4.4"
   }
 }
