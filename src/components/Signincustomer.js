@@ -45,7 +45,10 @@ class Signincustomer extends Component {
       data: this.state,
       dataType: 'json',
       success: (data) => {
-        console.log(data.done)
+        console.log(data.done);
+      },
+      error : (err) => {
+        console.log(err);
       }
     });
 

@@ -1,10 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const { userName } = require('./database-mongo/dbmongo');
+const { users, shop } = require("../database-mongo/dbmongo");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-// UNCOMMENT THE DATABASE YOU'D LIKE TO USE
 
 
 const app = express();
@@ -37,6 +36,13 @@ app.get('/' , function(req , res){
 app.post('/signinUser', (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
+  console.log(password)
+  users.create({email: email, password : password})
+  .then(() => {
+    return res.send({done : "successful"})
+  }).catch((err) => {
+      return res.status(HTTP_SERVER_ERROR).send({error: 'Server Error'})
+  })
   console.log(email)
   console.log("ok")
   res.send({
@@ -133,10 +139,10 @@ const HTTP_UNAUTHORIZED = 401;
 
 const HTTP_SERVER_ERROR = 500;
 
-exports.HTTP_CREATED = HTTP_CREATED;
-exports.HTTP_BAD_REQUEST = HTTP_BAD_REQUEST;
-exports.HTTP_UNAUTHORIZED = HTTP_UNAUTHORIZED;
-exports.HTTP_SERVER_ERROR = HTTP_SERVER_ERROR;
+// exports.HTTP_CREATED = HTTP_CREATED;
+// exports.HTTP_BAD_REQUEST = HTTP_BAD_REQUEST;
+// exports.HTTP_UNAUTHORIZED = HTTP_UNAUTHORIZED;
+// exports.HTTP_SERVER_ERROR = HTTP_SERVER_ERROR;
 
 
 

@@ -11,7 +11,7 @@ db.on('error', console.error.bind(console, 'connection error:'));
 
 db.once('open', function () {
 
-    console.log("We 're connected! ^__^")
+    console.log("good job you are connected :D")
 });
 //This For USer Information YY
 const usersSchema = new Schema({
@@ -48,8 +48,8 @@ usersSchema.methods.speak = function () {
     console.log(greeting);
   }
 
-const user = mongoose.model('users', usersSchema);
-const shops = mongoose.model('shopinformation', shop);
+const users = mongoose.model('users', usersSchema);
+const shops = mongoose.model('shops', shop);
 
 
 
@@ -70,5 +70,5 @@ let save = (data => {
 })
 
 
-module.exports.user = user;
+module.exports.users = users;
 module.exports.shop = shop;
