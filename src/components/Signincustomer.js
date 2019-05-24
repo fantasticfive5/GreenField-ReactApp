@@ -85,7 +85,15 @@ class Signincustomer extends Component {
               Email <input type='text' placeholder='Enter your email' name="email" required onChange={this.handleEmailChange} /><br></br>
               Password <input type='password' placeholder='password' name="password" required onChange={this.handlePasswordChange} /><br></br>
               <br></br>
-              <button onClick={() => this.click()} onChange={this.handleChange} disabled={!isEnabled}> Show Shops</button><br></br>
+              <Link to="/CustopmerHomepage"> 
+             <button 
+              
+              onClick={() => this.click()} onChange={this.handleChange} disabled={!isEnabled}> Show Shops
+              
+              </button>
+              
+              </Link>
+              <br></br>
               <p>
                 If you don't have an account <br>
                 </br>

@@ -9,6 +9,7 @@ import Signincustomer from "./components/Signincustomer";
 import SignUpCustomer from "./components/SignUpCustomer";
 import SignUpShop from './components/SignUpShop';
 import SignInShop from './components/SignInShop';
+import CustopmerHomepage from './components/CustopmerHomepage';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 // import Navbar from "bootstrap";
 // , Switch, Redirect 
@@ -43,6 +44,7 @@ class App extends React.Component {
           <Route path="/SignUpCustomer" component={SignUpCustomer} />
           <Route path="/SignInShop" component={SignInShop} />
           <Route path="/SignUpShop" component={SignUpShop} />
+          <Route path="/CustopmerHomepage" component={CustopmerHomepage} />
         </Router>
         </center>
      </form>
