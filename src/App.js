@@ -30,6 +30,8 @@ class App extends React.Component {
           <Route path="/SignInCustomer" component={Signincustomer} />
           <Route path="/SignUpCustomer" component={SignUpCustomer} />
           <Route path="/SignUpShop" component={SignUpShop} />
+          <Route path="/CustopmerHomepage" component={CustopmerHomepage} />
+          <Route path="/CustopmerHomepage" component={CustopmerHomepage} />
         </Router>
         </center>
      </form>

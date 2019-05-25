@@ -65,48 +65,42 @@ class Signincustomer extends Component {
     var isEnabled = email.length > 0 && password.length > 0;
     return (
       <body>
-        <center>
-          <div className="App">
-            <br></br>
-            <h4>
-              Sign In Please
+        <div className="form-style-10" >
+
+       
+        
+          <center>
+            <div className="App">
+              <br></br>
+              <h4>
+                Sign In Please
           </h4>
-            Email <input
-              type='text'
-              placeholder='Enter your email'
-              name="email"
-              required
-              onChange={this.handleEmailChange}
-            /><br></br>
-
-            Password <input
-              type='password'
-              placeholder='password'
-              name="password"
-              required
-              onChange={this.handlePasswordChange}
-            /><br></br>
-
-            <br></br>
-            <button
-              onClick={() => this.click()}
-              onChange={this.handleChange}
-              disabled={!isEnabled}>
-              Show Shops
+              Email <input type='text' placeholder='Enter your email' name="email" required onChange={this.handleEmailChange} /><br></br>
+              Password <input type='password' placeholder='password' name="password" required onChange={this.handlePasswordChange} /><br></br>
+              <br></br>
+              <Link to="/CustopmerHomepage"> 
+             <button 
+              
+              onClick={() => this.click()} onChange={this.handleChange} disabled={!isEnabled}> Show Shops
+              
               </button>
-            <br></br>
+              
+              </Link>
 
-            <p>
-              If you don't have an account <br>
-              </br>
-              please <Link
-                to="/Signupcustomer">
-                Signup
-                   </Link>
-            </p>
-          </div>
-        </center>
-      </body>
+             
+
+
+
+
+              <br></br>
+              <p>
+                If you don't have an account <br>
+                </br>
+                please <Link to="/Signupcustomer">Signup </Link>
+              </p>
+            </div></center>
+            </div>
+            </body>
     );
   }
 }

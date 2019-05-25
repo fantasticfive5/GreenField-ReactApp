@@ -45,6 +45,7 @@ class Signupcustomer extends Component {
     fetch('/signupuser', {
       method: 'post',
       body: JSON.stringify(data),
+
       headers: { "Content-Type": "application/json" }
     }).then(response => response.json())
       .then(state => this.setState(state));

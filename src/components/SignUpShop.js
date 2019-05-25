@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core/styles';
@@ -20,17 +21,19 @@ const styles = theme => ({
   },
 });
 
+
 class SignUpShop extends React.Component {
+
   constructor(props) {
     super(props);
 
     this.state = {
       toggle1: false,
-      firstName: "",
-      lastName: "",
-      email: " ",
-      password: ""
-
+      shopname: "",
+      shoplocation: "",
+      workkinghour: " ",
+      specialties: "",
+      phoneNumber: "",
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -41,6 +44,7 @@ class SignUpShop extends React.Component {
   }
 
   click(event) {
+
 
     event.preventDefault();
     const data = this.state
@@ -55,66 +59,90 @@ class SignUpShop extends React.Component {
     console.log(this.state);
 
   }
-
   render() {
     const { classes } = this.props;
     return (
-      <div>
+      <div className="form-style-10">
 
-        <form>
+        <form >
           <body><center>
 
+
+
+
             <TextField
               id="filled-search"
-              label="First Name"
+              label="shopname"
+
               type="text"
               className={classes.textField}
               margin="normal"
               variant="filled"
               onChange={this.handleChange}
-              name="firstName"
+              name="shopname"
             />
             <br />
-
+      
             <TextField
               id="filled-search"
-              label="Last Name"
+              label="shoplocation"
+
               type="text"
               className={classes.textField}
               margin="normal"
               variant="filled"
               onChange={this.handleChange}
-              name="lastName"
+              name="shoplocation"
             />
+
             <br />
 
+
             <TextField
-              id="filled-email-input"
-              label="Email"
+              id="filled-workkinghour-input"
+              label="workkinghour"
               className={classes.textField}
-              type="email"
-              name="email"
-              autoComplete="email"
+              type="workkinghour"
+              name="workkinghour"
+              autoComplete="workkinghour"
               margin="normal"
               variant="filled"
               onChange={this.handleChange}
+
             />
+
+
             <br />
 
+
             <TextField
-              id="filled-password-input"
-              label="Password"
+              id="filled-phoneNumber-input"
+              label="phoneNumber"
               className={classes.textField}
-              type="password"
-              autoComplete="current-password"
+              type="phoneNumber"
+              autoComplete="current-phoneNumber"
               margin="normal"
               variant="filled"
               onChange={this.handleChange}
-              name="password"
+              name="phoneNumber"
+
             />
+          
+
+
+
             <br />
 
-            <Button variant="contained" color="primary" type="submit" onClick={(event) => this.click(event)} >Submit</Button>
+
+            <Link to="/CustopmerHomepage">
+
+              <button onClick={(event) => this.click(event)} >
+                sign Up
+              </button>
+            </Link>
+            <Button variant="contained" color="primary" type="submit" onClick={(event) => this.click(event)} >sign Up</Button>
+
+
           </center>
           </body>
         </form>

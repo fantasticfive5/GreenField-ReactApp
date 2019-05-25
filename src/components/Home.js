@@ -1,5 +1,9 @@
 import React from 'react';
+import Signincustomer from "./Signincustomer.js";
+import SignInShop from './SignInShop.js';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+
 
 class Home extends React.Component {
   constructor(props) {
@@ -22,6 +26,7 @@ class Home extends React.Component {
 
   render() {
     return (
+
       <form >
         <div className="form-style-10"><center><div>
 
@@ -39,10 +44,10 @@ class Home extends React.Component {
                 <button>
                   Customer
             </button>
-              </Link>
-              <br></br>
+          </Link>
+          <br></br>
 
-              <Link to="/SignInShop">
+      <Link to="/SignInShop">
                 <button>
                   Shop Owner
             </button>
