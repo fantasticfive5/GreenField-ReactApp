@@ -66,9 +66,6 @@ class SignUpShop extends React.Component {
         <form >
           <body><center>
 
-
-
-
             <TextField
               id="filled-search"
               label="shopname"
@@ -126,10 +123,7 @@ class SignUpShop extends React.Component {
               name="phoneNumber"
 
             />
-          
-
-
-
+        
             <br />
 
 
