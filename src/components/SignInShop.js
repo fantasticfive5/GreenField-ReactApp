@@ -11,14 +11,10 @@ import {
     Redirect
   } from 'react-router-dom'
   import {
-    // Paper,
-    // Typography,
     TextField,
     Button 
   } from '@material-ui/core'
   import { withStyles } from '@material-ui/core/styles';
-
-
 
   const styles = theme => ({
     container: {
@@ -43,26 +39,16 @@ import {
       },
   });
 
-
-
-
-
-
-
   class SignInShop extends React.Component {
-
     constructor(props){
         super(props);
 
         this.handleChange = this.handleChange.bind(this);
         this.state = {
-
             username :"",
             password : ""
-
         }
     }
-
 
     handleChange(e) {
         console.log(e.target.value);
@@ -76,13 +62,10 @@ import {
           });
       }
 
-
     click(event) {
 
-        
-        
         event.preventDefault();
-        console.log(this.state); // var that = this;
+        console.log(this.state); 
     
         $.ajax({
           type: 'POST',

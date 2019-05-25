@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-// import { Link } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import $ from 'jquery';
-
-
+// import { Link } from '@material-ui/core';
 
 class Signincustomer extends Component {
   constructor(props) {
@@ -12,9 +10,8 @@ class Signincustomer extends Component {
       email: "",
       password: ""
     }
-
   }
-  // this.porps.isEnabled = this.isEnabled.bind(this);
+
   sendData() {
     const data = { email: this.state.email, password: this.state.password }
     console.log(data)
@@ -33,10 +30,7 @@ class Signincustomer extends Component {
   }
 
   click() {
-    // event.preventDefault();
-    // event.preventDefault();
-    // console.log(this.state);
-    // var that = this;
+
     $.ajax({
       type: 'POST',
       url: '/signinUser',
@@ -45,12 +39,10 @@ class Signincustomer extends Component {
       success: (data) => {
         console.log(data.done);
       },
-      error : (err) => {
+      error: (err) => {
         console.log(err);
       }
     });
-
-    // console.log(this.state);
   }
 
 
@@ -67,8 +59,6 @@ class Signincustomer extends Component {
     const { email, password } = this.state;
     alert(`Signed up with email: ${email} password: ${password}`);
   };
-
-
 
   render() {
     const { email, password } = this.state;
@@ -113,7 +103,5 @@ class Signincustomer extends Component {
             </body>
     );
   }
-
 }
-
 export default Signincustomer;

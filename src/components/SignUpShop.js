@@ -1,13 +1,8 @@
-/* eslint-disable no-labels */
 import React from 'react'
-import $ from 'jquery';
-// import { BrowserRouter as Router, Route,Link,Switch,Redirect} from 'react-router-dom';
+import { Link } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-// import PropTypes from 'prop-types';
-// import MenuItem from '@material-ui/core/MenuItem';
 import { withStyles } from '@material-ui/core/styles';
-import { Link } from '@material-ui/core';
 
 const styles = theme => ({
   container: {
@@ -27,11 +22,6 @@ const styles = theme => ({
 });
 
 
-
-
-
-
-
 class SignUpShop extends React.Component {
 
   constructor(props) {
@@ -39,23 +29,14 @@ class SignUpShop extends React.Component {
 
     this.state = {
       toggle1: false,
-
       shopname: "",
       shoplocation: "",
       workkinghour: " ",
       specialties: "",
       phoneNumber: "",
-      password: ""
-
-
-
-
     };
     this.handleChange = this.handleChange.bind(this);
   }
-
-
-
 
   handleChange(e) {
     console.log(e.target.value);
@@ -64,28 +45,26 @@ class SignUpShop extends React.Component {
 
   click(event) {
 
-    // eslint-disable-next-line no-unused-expressions
-    // toggle1:true;
+
     event.preventDefault();
-    console.log(this.state); // var that = this;
+    const data = this.state
+    event.preventDefault();
+    fetch('/signupshop', {
+      method: 'post',
+      body: JSON.stringify(data),
+      headers: { "Content-Type": "application/json" }
+    }).then(response => response.json())
+      .then(state => this.setState(state));
 
-    $.ajax({
-      type: 'POST',
-      url: '/SignUp',
-      data: this.state,
-      dataType: 'json'
-    });
     console.log(this.state);
+
   }
-
-
-
   render() {
     const { classes } = this.props;
     return (
-      <div  className="form-style-10">
+      <div className="form-style-10">
 
-        <form action="thank you ">
+        <form >
           <body><center>
 
 
@@ -94,6 +73,7 @@ class SignUpShop extends React.Component {
             <TextField
               id="filled-search"
               label="shopname"
+
               type="text"
               className={classes.textField}
               margin="normal"
@@ -102,12 +82,11 @@ class SignUpShop extends React.Component {
               name="shopname"
             />
             <br />
-
-
-
+      
             <TextField
               id="filled-search"
               label="shoplocation"
+
               type="text"
               className={classes.textField}
               margin="normal"
