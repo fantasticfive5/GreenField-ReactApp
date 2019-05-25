@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-// import { Link } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import $ from 'jquery';
-
-
+// import { Link } from '@material-ui/core';
 
 class Signincustomer extends Component {
   constructor(props) {
@@ -12,9 +10,8 @@ class Signincustomer extends Component {
       email: "",
       password: ""
     }
-
   }
-  // this.porps.isEnabled = this.isEnabled.bind(this);
+
   sendData() {
     const data = { email: this.state.email, password: this.state.password }
     console.log(data)
@@ -33,10 +30,7 @@ class Signincustomer extends Component {
   }
 
   click() {
-    // event.preventDefault();
-    // event.preventDefault();
-    // console.log(this.state);
-    // var that = this;
+
     $.ajax({
       type: 'POST',
       url: '/signinUser',
@@ -45,12 +39,10 @@ class Signincustomer extends Component {
       success: (data) => {
         console.log(data.done);
       },
-      error : (err) => {
+      error: (err) => {
         console.log(err);
       }
     });
-
-    // console.log(this.state);
   }
 
 
@@ -68,33 +60,54 @@ class Signincustomer extends Component {
     alert(`Signed up with email: ${email} password: ${password}`);
   };
 
-
-
   render() {
     const { email, password } = this.state;
     var isEnabled = email.length > 0 && password.length > 0;
     return (
       <body>
-        
-          <center>
-            <div className="App">
-              <br></br>
-              <h4>
-                Sign In Please
+        <center>
+          <div className="App">
+            <br></br>
+            <h4>
+              Sign In Please
           </h4>
-              Email <input type='text' placeholder='Enter your email' name="email" required onChange={this.handleEmailChange} /><br></br>
-              Password <input type='password' placeholder='password' name="password" required onChange={this.handlePasswordChange} /><br></br>
-              <br></br>
-              <button onClick={() => this.click()} onChange={this.handleChange} disabled={!isEnabled}> Show Shops</button><br></br>
-              <p>
-                If you don't have an account <br>
-                </br>
-                please <Link to="/Signupcustomer">Signup </Link>
-              </p>
-            </div></center></body>
+            Email <input
+              type='text'
+              placeholder='Enter your email'
+              name="email"
+              required
+              onChange={this.handleEmailChange}
+            /><br></br>
+
+            Password <input
+              type='password'
+              placeholder='password'
+              name="password"
+              required
+              onChange={this.handlePasswordChange}
+            /><br></br>
+
+            <br></br>
+            <button
+              onClick={() => this.click()}
+              onChange={this.handleChange}
+              disabled={!isEnabled}>
+              Show Shops
+              </button>
+            <br></br>
+
+            <p>
+              If you don't have an account <br>
+              </br>
+              please <Link
+                to="/Signupcustomer">
+                Signup
+                   </Link>
+            </p>
+          </div>
+        </center>
+      </body>
     );
   }
-
 }
-
 export default Signincustomer;

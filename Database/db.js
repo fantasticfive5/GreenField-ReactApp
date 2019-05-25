@@ -14,41 +14,34 @@ const Schema = mongoose.Schema;
 // });
 //This For User Information YY
 const usersSchema = new Schema({
-        userName : {type : String , required : true},    
-        firstName: { type: String, trim: true, required: true },
-        lastName: { type: String, trim: true, required: true },
 
-    email: {
-        type: String,
-        required: [true, 'Email Field is required'],
-        unique: true,
-        match: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
-    },
+  firstName: { type: String, trim: true, required: true },
+  lastName: { type: String, trim: true, required: true },
 
-    password: { type: String, required: true },
+  email: {
+    type: String,
+    required: [true, 'Email Field is required'],
+    unique: true,
+    match: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+  },
 
-    date : {
-        type : Date ,
-        default : Date.now
-    }
+  password: { type: String, required: true },
+
+  date: {
+    type: Date,
+    default: Date.now
+  }
 });
 
 //This Schema for USer Information about the car
 const shop = new Schema({
 
-    shopname:     { type: String, required: true },
-    shoplocation: { type: String, coordinates: [Number] },
-    workkinghour: { type: Number },
+  shopname: { type: String, required: true },
+  shoplocation: { type: String, coordinates: [Number] },
+  workkinghour: { type: Number },
 
-    specialties:  { type: String },
-    phoneNumber:  { type: Number, required: true },
-
-
-
-
-
-    specialties: { type: String },
-    phoneNumber: { type: Number, required: true }
+  specialties: { type: String },
+  phoneNumber: { type: Number, required: true },
 
 });
 
@@ -58,26 +51,42 @@ const shop = new Schema({
 const users = mongoose.model('users', usersSchema);
 const shops = mongoose.model('shops', shop);
 
-
-
-let save = (data => {
-
-    for (var i = 0; i < data.length; i++) {
-
-        var obj = {
-
-           username: data[i].username,
-            firstName : data[i].firstName,
-            lastName : data[i].lastName,
-           email: data[i].email,
-            password: data[i].password
-        }
-
-        var rebo = new usersSchema(obj);
-        rebo.save();
-    }
-})
-
-
 module.exports.users = users;
-module.exports.shop = shop;
+module.exports.shop = shops;
+
+
+// let saveuser = (data => {
+
+//   for (var i = 0; i < data.length; i++) {
+
+//     var obj = {
+//       firstName: data[i].firstName,
+//       lastName: data[i].lastName,
+//       email: data[i].email,
+//       password: data[i].password
+//     }
+//     var rebo = new usersSchema(obj);
+//         rebo.saveuser();
+//   }
+// })
+//     let saveshops = ((data) => {
+
+//       for (var i = 0; i < data.length; i++) {
+
+//         var obj2 = {
+//           email: data[i].email,
+//           shopname: data[i].shopname,
+//           shoplocation: data[i].shoplocation,
+//           workkinghour: data[i].workkinghour,
+//           specialties: data[i].specialties,
+//           phoneNumber: data[i].phoneNumber
+          
+//         }
+
+        
+    //     const shopRepo = new shop(obj2);
+    //     shopRepo.saveshops();
+    //   }
+    // });
+
+
