@@ -4,6 +4,7 @@ import Home from "./components/Home.js";
 import Signincustomer from "./components/Signincustomer";
 import SignUpCustomer from "./components/SignUpCustomer";
 import SignUpShop from './components/SignUpShop';
+import CustopmerHomepage from './components/CustopmerHomepage';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 // import SignInShop from './components/SignInShop';
 
@@ -18,22 +19,20 @@ class App extends React.Component {
   render() {
     return (
       
-      <form><center>
+      <form>
         <Router >    
             <Link to="/Home">
               <button>
                 Home
               </button>
-            </Link> 
+            </Link>
         
           <Route path="/Home" component={Home} />
           <Route path="/SignInCustomer" component={Signincustomer} />
           <Route path="/SignUpCustomer" component={SignUpCustomer} />
           <Route path="/SignUpShop" component={SignUpShop} />
           <Route path="/CustopmerHomepage" component={CustopmerHomepage} />
-          <Route path="/CustopmerHomepage" component={CustopmerHomepage} />
         </Router>
-        </center>
      </form>
     );
   }
