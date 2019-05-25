@@ -37,7 +37,7 @@ const usersSchema = new Schema({
 const shop = new Schema({
 
   shopname: { type: String, required: true },
-  shoplocation: { type: String, coordinates: [Number] },
+  shoplocation: { type: String },
   workkinghour: { type: Number },
 
   specialties: { type: String },

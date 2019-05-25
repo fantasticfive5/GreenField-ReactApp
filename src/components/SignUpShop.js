@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from '@material-ui/core';
+// import { Link } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core/styles';
@@ -31,7 +31,7 @@ class SignUpShop extends React.Component {
       toggle1: false,
       shopname: "",
       shoplocation: "",
-      workkinghour: " ",
+      workkinghour: "",
       specialties: "",
       phoneNumber: "",
     };
@@ -48,8 +48,7 @@ class SignUpShop extends React.Component {
 
     event.preventDefault();
     const data = this.state
-    event.preventDefault();
-    fetch('/signupshop', {
+    fetch('http://localhost:3500/SignUpShop', {
       method: 'post',
       body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" }
@@ -134,12 +133,6 @@ class SignUpShop extends React.Component {
             <br />
 
 
-            <Link to="/CustopmerHomepage">
-
-              <button onClick={(event) => this.click(event)} >
-                sign Up
-              </button>
-            </Link>
             <Button variant="contained" color="primary" type="submit" onClick={(event) => this.click(event)} >sign Up</Button>
 
 

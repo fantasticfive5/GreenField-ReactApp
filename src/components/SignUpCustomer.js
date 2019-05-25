@@ -30,6 +30,7 @@ const styles = theme => ({
 class Signupcustomer extends Component {
   constructor(props) {
     super(props);
+    this.handleChange = this.handleChange.bind(this);
     this.state = {
       firstName: "",
       lastName: "",
@@ -40,15 +41,15 @@ class Signupcustomer extends Component {
   }
 
   post(event) {
-    const data = this.state
     event.preventDefault();
-    fetch('/signupuser', {
+    const data = this.state
+    fetch('http://localhost:3500/signupuser', {
       method: 'post',
       body: JSON.stringify(data),
-
       headers: { "Content-Type": "application/json" }
     }).then(response => response.json())
       .then(state => this.setState(state));
+
   }
   handleChange(e) {
     console.log(e.target.value);
@@ -110,7 +111,7 @@ class Signupcustomer extends Component {
           />
 
           <br /><Link to="/Signincustomer">
-            <Button variant="contained" color="primary" type="submit" onClick={(event) => this.click(event)} > Submit</Button>
+            <Button variant="contained" color="primary" type="submit" onClick={(event) => this.post(event)} > Submit</Button>
           </Link></body>
         </form>
       </div>

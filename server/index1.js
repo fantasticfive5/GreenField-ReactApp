@@ -6,46 +6,42 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const pino = require('express-pino-logger')();
 const SECRETK = require("./secret.js")
-
-const url = 'mongodb://localhost:3000'
+const url = 'mongodb://localhost/myDatabase'
+const app = express();
+const port =  3500;
+const saltRounds = 5;
+// const HTTP_CREATED = 201;
+// const HTTP_BAD_REQUEST = 400;
+const HTTP_UNAUTHORIZED = 401;
+const HTTP_SERVER_ERROR = 500;
 
 mongoose.connect(url, { useNewUrlParser: true }).then(connection => {
   console.log('You are connected to mongo Database :)');
 }).catch(function (err) {
   console.log(err);
 });
-const app = express();
-
-const port = process.env.PORT || 27017;
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json());
 app.use(pino);
 app.use(express.static(__dirname + '/../react-client/dist'));
-
-const saltRounds = 5;
-const HTTP_CREATED = 201;
-const HTTP_BAD_REQUEST = 400;
-const HTTP_UNAUTHORIZED = 401;
-const HTTP_SERVER_ERROR = 500;
-
-// app.get('/', function (req, res) {
-//   users.find(function (err, data) {
-//     if (err) {
-//       res.sendStatus(500);
-//     } else {
-//       res.json(data);
-//       console.log(data)
-//     }
-//   });
-// });
-
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 app.get('/', function (req, res) {
-
   res.send("Hi ...");
 });
 
-
+app.get('/getshops', function(req, res) {
+  // const user = req.body.user; //Added by authenticate function 
+  shop.find({}).then((shops) => {
+      return res.send( shops);
+  }).catch(function(err){
+      return res.status(HTTP_SERVER_ERROR).send({error: 'Server Error'});
+  })
+});
 //posting from the front-end to the database
 app.post('/signupuser', (req, res) => {
   const firstName = req.body.firstName;
@@ -61,8 +57,9 @@ app.post('/signupuser', (req, res) => {
       return res.send("email is already taken!, Please sign in with the same email or use another email.")
     } else {
       users.create({ firstName: firstName, lastName: lastName, email: email, password: hashedpassword })
-        .then(() => {
-          return res.send({ done: "successful" })
+        .then((tt) => {
+          console.log("done")
+          return res.send({ done: "successful", tt : tt })
         }).catch((err) => {
           return res.status(HTTP_SERVER_ERROR).send({ error: 'Server Error' })
         })
@@ -97,7 +94,9 @@ app.post('/signinuser', (req, res) => {
 });
 
 //posting from the front-end to the database
-app.post('/signupshop', (req, res) => {
+app.post('/SignUpShop', (req, res) => {
+
+  console.log("dddddddddd\n\n\n\n\n\n\n",req.body, "\n\n\n\n\n\n\n ddddddddddddd")
   const shopname = req.body.shopname;
   const shoplocation = req.body.shoplocation;
   const workkinghour = req.body.workkinghour;
@@ -106,21 +105,21 @@ app.post('/signupshop', (req, res) => {
 
   shop.findOne({ phoneNumber: phoneNumber }).then((data) => {
     if (data) {
-      console.log("Email already exists!")
+      console.log("already registered")
       return res.send("phoneNumber is already taken!, Please sign up using another phoneNumber.")
     } else {
       shop.create({
-        email: email,
         shopname: shopname,
         shoplocation: shoplocation,
         workkinghour: workkinghour,
         specialties: specialties,
         phoneNumber: phoneNumber
       })
-        .then(() => {
+        .then((ress) => {
+          console.log(ress)
           return res.send({ done: "Signed up successfully" })
         }).catch((err) => {
-          return res.status(HTTP_SERVER_ERROR).send({ error: 'Server Error' })
+          return res.status(HTTP_SERVER_ERROR).send({ error: err })
         })
     }
   })

@@ -1,8 +1,7 @@
 import React from 'react';
-import Signincustomer from "./Signincustomer.js";
-import SignInShop from './SignInShop.js';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+// import Signincustomer from "./Signincustomer.js";
+// import SignInShop from './SignInShop.js';
 
 
 class Home extends React.Component {
@@ -31,9 +30,27 @@ class Home extends React.Component {
         <div className="form-style-10"><center><div>
 
           <header>
-            <h1>
+          <Link to="/SignInCustomer">
+              <button>
+                Login
+              </button>
+            </Link> 
+
+            <Link to="/SignUpCustomer">
+              <button>
+                Register an account
+              </button>
+            </Link> 
+
+            <Link to="/SignUpShop">
+              <button>
+                Register a shop
+              </button>
+            </Link> 
+            <h1><br></br>
               Welcome to Ma3ak
           </h1>
+          
           </header>
 
         </div>
@@ -47,7 +64,7 @@ class Home extends React.Component {
           </Link>
           <br></br>
 
-      <Link to="/SignInShop">
+      <Link to="/SignUpShop">
                 <button>
                   Shop Owner
             </button>

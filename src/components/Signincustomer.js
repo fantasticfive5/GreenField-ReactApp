@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import $ from 'jquery';
+// import $ from 'jquery';
 // import { Link } from '@material-ui/core';
 
 class Signincustomer extends Component {
@@ -29,21 +29,19 @@ class Signincustomer extends Component {
     });
   }
 
-  click() {
+  // getInfo() {
 
-    $.ajax({
-      type: 'POST',
-      url: '/signinUser',
-      data: this.state,
-      dataType: 'json',
-      success: (data) => {
-        console.log(data.done);
-      },
-      error: (err) => {
-        console.log(err);
-      }
-    });
-  }
+  //   // event.preventDefault();
+
+  //   fetch('http://localhost:3500/getshops', {
+  //     method: 'GET',
+  //     headers: { "Content-Type": "application/json" }
+  //   }).then(response => response.json())
+  //     .then(state => {
+  //       console.log(state)
+  //       this.setState({shops: state.shops})});
+
+  // }
 
 
   handleEmailChange = evt => {
@@ -81,7 +79,7 @@ class Signincustomer extends Component {
               <Link to="/CustopmerHomepage"> 
              <button 
               
-              onClick={() => this.click()} onChange={this.handleChange} disabled={!isEnabled}> Show Shops
+              onChange={this.handleChange} disabled={!isEnabled}> Show Shops
               
               </button>
               
