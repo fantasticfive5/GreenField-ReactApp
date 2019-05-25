@@ -7,8 +7,11 @@ class CustopmerHomepage extends Component {
   
     this.state = {
        shops : [{
-        shopname:"motasem",
-        phoneNumber : "0780437773" 
+        shopname:"",
+        shoplocation:"",
+        workkinghour:"",
+        phoneNumber : "" 
+
        }]
     }
   }
@@ -34,7 +37,7 @@ componentWillMount(){
     return (
         <div className="form-style-7">
       
-    {this.state.shops.map(shop => <div>{shop.shopname }<br> </br>{shop.shoplocation}<br> </br>{shop.workkinghour}<b></b>{shop.specialties}<br></br>{shop.phoneNumber}</div>)}
+    {this.state.shops.map(shop => <div>{shop.shopname }<br></br>{shop.shoplocation}<br></br>{shop.workkinghour}<b></b>{shop.specialties}<br></br>{shop.phoneNumber}</div>)}
       
       </div>
     );

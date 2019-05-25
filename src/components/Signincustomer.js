@@ -73,7 +73,7 @@ class Signincustomer extends Component {
               <h4>
                 Sign In Please
           </h4>
-              Email <input type='text' placeholder='Enter your email' name="email" required onChange={this.handleEmailChange} /><br></br>
+              Email <input id="rawan" type='text' placeholder='Enter your email' name="email" required onChange={this.handleEmailChange} /><br></br>
               Password <input type='password' placeholder='password' name="password" required onChange={this.handlePasswordChange} /><br></br>
               <br></br>
               <Link to="/CustopmerHomepage"> 
