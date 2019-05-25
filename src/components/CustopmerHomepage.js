@@ -32,10 +32,10 @@ componentWillMount(){
     
 
     return (
-        <div className="form-style-10">
-      <ul>
-        {this.state.shops.map(shop => <li>{shop.shopname }{shop.phoneNumber}</li>)}
-      </ul>
+        <div className="form-style-7">
+      
+    {this.state.shops.map(shop => <div>{shop.shopname }<br> </br>{shop.shoplocation}<br> </br>{shop.workkinghour}<b></b>{shop.specialties}<br></br>{shop.phoneNumber}</div>)}
+      
       </div>
     );
   }

@@ -1,25 +1,25 @@
 import React from 'react'
 // import { Link } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import { withStyles } from '@material-ui/core/styles';
+// import TextField from '@material-ui/core/TextField';
+// import { withStyles } from '@material-ui/core/styles';
 
-const styles = theme => ({
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  textField: {
-    marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
-  },
-  dense: {
-    marginTop: 16,
-  },
-  menu: {
-    width: 200,
-  },
-});
+// const styles = theme => ({
+//   container: {
+//     display: 'flex',
+//     flexWrap: 'wrap',
+//   },
+//   textField: {
+//     marginLeft: theme.spacing.unit,
+//     marginRight: theme.spacing.unit,
+//   },
+//   dense: {
+//     marginTop: 16,
+//   },
+//   menu: {
+//     width: 200,
+//   },
+// });
 
 
 class SignUpShop extends React.Component {
@@ -61,35 +61,37 @@ class SignUpShop extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-      <div className="form-style-10">
+      <div className="form-style-7">
 
         <form >
-          <body><center>
+          <body> <center>
 
 
 
 
-            <TextField
+            <input
               id="filled-search"
               label="shopname"
 
               type="text"
-              className={classes.textField}
-              margin="normal"
-              variant="filled"
+              placeholder="Shopname"
+              // className={classes.textField}
+              // margin="normal"
+              // variant="filled"
               onChange={this.handleChange}
               name="shopname"
             />
             <br />
       
-            <TextField
+            <input
               id="filled-search"
               label="shoplocation"
 
               type="text"
-              className={classes.textField}
-              margin="normal"
-              variant="filled"
+              placeholder="Shoplocation"
+              // className={classes.textField}
+              // margin="normal"
+              // variant="filled"
               onChange={this.handleChange}
               name="shoplocation"
             />
@@ -97,15 +99,16 @@ class SignUpShop extends React.Component {
             <br />
 
 
-            <TextField
-              id="filled-workkinghour-input"
+            <input
+               id="filled-search"
               label="workkinghour"
-              className={classes.textField}
-              type="workkinghour"
+              // className={classes.textField}
+              type="text"
+              placeholder="Working-Hour"
               name="workkinghour"
               autoComplete="workkinghour"
-              margin="normal"
-              variant="filled"
+              // margin="normal"
+              // variant="filled"
               onChange={this.handleChange}
 
             />
@@ -114,14 +117,15 @@ class SignUpShop extends React.Component {
             <br />
 
 
-            <TextField
-              id="filled-phoneNumber-input"
+            <input
+            id="filled-search"
               label="phoneNumber"
-              className={classes.textField}
-              type="phoneNumber"
-              autoComplete="current-phoneNumber"
-              margin="normal"
-              variant="filled"
+              // className={classes.textField}
+              type="text"
+              placeholder="PhoneNumber"
+              // autoComplete="current-phoneNumber"
+              // margin="normal"
+              // variant="filled"
               onChange={this.handleChange}
               name="phoneNumber"
 
@@ -133,7 +137,7 @@ class SignUpShop extends React.Component {
             <br />
 
 
-            <Button variant="contained" color="primary" type="submit" onClick={(event) => this.click(event)} >sign Up</Button>
+            <button   type="submit" onClick={(event) => this.click(event)} >sign Up</button>
 
 
           </center>
@@ -144,4 +148,4 @@ class SignUpShop extends React.Component {
   }
 }
 
-export default withStyles(styles)(SignUpShop);
+export default SignUpShop;

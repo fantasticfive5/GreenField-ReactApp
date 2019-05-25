@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { BrowserRouter as 
-  // Router, 
-  // Route, 
-  Link, 
+import {
+  BrowserRouter as
+    // Router, 
+    // Route, 
+    Link,
   // Switch, 
   // Redirect 
 } from 'react-router-dom';
@@ -58,61 +59,74 @@ class Signupcustomer extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <div>
+      <div className="form-style-7">
         <form>  <body>
-          <TextField
-            id="filled-search"
-            label="First Name"
-            type="text"
-            className={classes.textField}
-            margin="normal"
-            variant="filled"
-            onChange={this.handleChange}
-            name="firstName"
-          />
-          <br />
+         <center>
+          <h1>
+            Thank you for using ma3ak
+          </h1>
+</center>
+        <br></br>
+        <br></br>
+        
+          <center>
+            <TextField
+              id="filled-search"
+              label="First Name"
+              type="text"
+              className={classes.textField}
+              margin="normal"
+              variant="filled"
+              onChange={this.handleChange}
+              name="firstName"
+            />
+            <br />
 
-          <TextField
-            id="filled-search"
-            label="Last Name"
-            type="text"
-            className={classes.textField}
-            margin="normal"
-            variant="filled"
-            onChange={this.handleChange}
-            name="lastName"
-          />
+            <TextField
+              id="filled-search"
+              label="Last Name"
+              type="text"
+              className={classes.textField}
+              margin="normal"
+              variant="filled"
+              onChange={this.handleChange}
+              name="lastName"
+            />
 
-          <br />
-          <TextField
-            id="filled-email-input"
-            label="Email"
-            className={classes.textField}
-            type="email"
-            name="email"
-            autoComplete="email"
-            margin="normal"
-            variant="filled"
-            onChange={this.handleChange}
+            <br />
+            <TextField
+              id="filled-email-input"
+              label="Email"
+              className={classes.textField}
+              type="text"
+              name="email"
+              autoComplete="email"
+              margin="normal"
+              variant="filled"
+              onChange={this.handleChange}
 
-          />
+            />
 
-          <br />
-          <TextField
-            id="filled-password-input"
-            label="Password"
-            className={classes.textField}
-            type="password"
-            autoComplete="current-password"
-            margin="normal"
-            variant="filled"
-            onChange={this.handleChange}
-            name="password"
-          />
+            <br />
+            <TextField
+              id="filled-password-input"
+              label="Password"
+              className={classes.textField}
+              type="text"
+              autoComplete="current-password"
+              margin="normal"
+              variant="filled"
+              onChange={this.handleChange}
+              name="password"
+            />
 
-          <br /><Link to="/Signincustomer">
-            <Button variant="contained" color="primary" type="submit" onClick={(event) => this.post(event)} > Submit</Button>
-          </Link></body>
+            <br /><Link to="/Signincustomer">
+              <br></br>
+
+              <Button variant="contained" color="primary" type="submit" onClick={(event) => this.post(event)} > sign Up</Button>
+            </Link>
+          </center>
+        </body>
         </form>
       </div>
     )

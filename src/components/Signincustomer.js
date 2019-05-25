@@ -63,7 +63,7 @@ class Signincustomer extends Component {
     var isEnabled = email.length > 0 && password.length > 0;
     return (
       <body>
-        <div className="form-style-10" >
+        <div className="form-style-7" >
 
        
         
@@ -91,13 +91,20 @@ class Signincustomer extends Component {
 
 
               <br></br>
+              
               <p>
                 If you don't have an account <br>
                 </br>
                 please <Link to="/Signupcustomer">Signup </Link>
               </p>
             </div></center>
+  
             </div>
+<center>
+            <div>
+              <img src="https://files.slack.com/files-pri/TGEHN6M8Q-FK1VCBDPG/ma3aklogo.png" />
+            </div>
+  </center>
             </body>
     );
   }

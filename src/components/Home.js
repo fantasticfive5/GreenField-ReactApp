@@ -29,7 +29,7 @@ class Home extends React.Component {
       <form >
         <div className="form-style-10"><center><div>
 
-          <header>
+          {/* <header>
           <Link to="/SignInCustomer">
               <button>
                 Login
@@ -49,27 +49,46 @@ class Home extends React.Component {
             </Link> 
             <h1><br></br>
               Welcome to Ma3ak
-          </h1>
+          </h1> */}
           
-          </header>
+          {/* </header> */}
 
         </div>
           <body>
-            <div>
-              Sign in as a <br></br>
+            <div ><center>
+                <br></br>
               <Link to="/SignInCustomer">
+                <br>
+          </br>
                 <button>
                   Customer
             </button>
           </Link>
-          <br></br>
-
+          
+          <br>
+          </br>
+          <br>
+          </br>
+        
       <Link to="/SignUpShop">
                 <button>
                   Shop Owner
             </button>
-              </Link>
+              </Link></center>
             </div>
+            <center>
+            
+            
+            
+           
+            <div>
+              <img src="https://files.slack.com/files-pri/TGEHN6M8Q-FK1VCBDPG/ma3aklogo.png" />
+            </div>
+              
+              
+              
+            
+            </center>
           </body>
         </center>
         </div>
