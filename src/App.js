@@ -19,21 +19,24 @@ class App extends React.Component {
   render() {
     return (
       
-      <form>
+      <form className="form-style-10">
+        
         <Router >    
             <Link to="/Home">
-              <button>
+              <button  > 
                 Home
               </button>
             </Link>
-        
+          
           <Route path="/Home" component={Home} />
           <Route path="/SignInCustomer" component={Signincustomer} />
           <Route path="/SignUpCustomer" component={SignUpCustomer} />
           <Route path="/SignUpShop" component={SignUpShop} />
           <Route path="/CustopmerHomepage" component={CustopmerHomepage} />
         </Router>
+      
      </form>
+       
     );
   }
 }

@@ -63,7 +63,7 @@ class Signincustomer extends Component {
     var isEnabled = email.length > 0 && password.length > 0;
     return (
       <body>
-        <div className="form-style-10" >
+        <div className="form-style-7" >
 
        
         
@@ -73,7 +73,7 @@ class Signincustomer extends Component {
               <h4>
                 Sign In Please
           </h4>
-              Email <input type='text' placeholder='Enter your email' name="email" required onChange={this.handleEmailChange} /><br></br>
+              Email <input id="rawan" type='text' placeholder='Enter your email' name="email" required onChange={this.handleEmailChange} /><br></br>
               Password <input type='password' placeholder='password' name="password" required onChange={this.handlePasswordChange} /><br></br>
               <br></br>
               <Link to="/CustopmerHomepage"> 
@@ -91,13 +91,20 @@ class Signincustomer extends Component {
 
 
               <br></br>
+              
               <p>
                 If you don't have an account <br>
                 </br>
                 please <Link to="/Signupcustomer">Signup </Link>
               </p>
             </div></center>
+  
             </div>
+<center>
+            <div>
+              <img src="https://files.slack.com/files-pri/TGEHN6M8Q-FK1VCBDPG/ma3aklogo.png" />
+            </div>
+  </center>
             </body>
     );
   }
