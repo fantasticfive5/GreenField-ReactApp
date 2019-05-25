@@ -6,6 +6,7 @@ import Signincustomer from "./Signincustomer.js";
 // import SignUpShop from './SignUpShop';
 import SignInShop from './SignInShop.js';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+
 // , Switch, Redirect
 
 
@@ -35,7 +36,7 @@ class Home extends React.Component {
   render() {
     return (
       <form>
-      <div><center><div>
+      <div className="form-style-10"><center><div>
 
         <header>
           <h1>

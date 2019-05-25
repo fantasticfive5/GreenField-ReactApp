@@ -83,7 +83,7 @@ class SignUpShop extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-      <div>
+      <div  className="form-style-10">
 
         <form action="thank you ">
           <body><center>

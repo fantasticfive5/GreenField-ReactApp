@@ -59,7 +59,7 @@ class Signupcustomer extends Component {
     render() {
         const { classes } = this.props;
         return (
-            <div>
+            <div  className="form-style-10">
                 <form>  <body>     
 <TextField
 id="filled-search"

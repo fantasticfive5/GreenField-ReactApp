@@ -98,7 +98,7 @@ import {
         const { classes } = this.props;
 
         return(
-            <div><center>
+            <div  className="form-style-10"><center>
                <form className={classes.container} noValidate autoComplete="off"> <body>
                 
                <TextField
@@ -128,11 +128,7 @@ import {
           name = "password"
 
              />
-              <Link to="/CustopmerHomepage"> 
-              <button variant="contained" color="primary" className={classes.button} type="submit" onClick={(event) => this.click(event)} >Sign In</button>
-
-              
-              </Link>
+             
                 <p>
             If you don't have an account <br>
             </br>

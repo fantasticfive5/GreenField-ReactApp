@@ -75,6 +75,9 @@ class Signincustomer extends Component {
     var isEnabled = email.length > 0 && password.length > 0;
     return (
       <body>
+        <div className="form-style-10" >
+
+       
         
           <center>
             <div className="App">
@@ -105,7 +108,9 @@ class Signincustomer extends Component {
                 </br>
                 please <Link to="/Signupcustomer">Signup </Link>
               </p>
-            </div></center></body>
+            </div></center>
+            </div>
+            </body>
     );
   }
 

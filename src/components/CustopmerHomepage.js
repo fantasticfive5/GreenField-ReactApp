@@ -11,9 +11,11 @@ class CustopmerHomepage extends Component {
     ];
 
     return (
+        <div className="form-style-10">
       <ul>
         {shops.map(shop => <li>{shop}</li>)}
       </ul>
+      </div>
     );
   }
 }
