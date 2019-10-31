@@ -13,7 +13,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongod": "^2.0.0",
     "mongodb": "^3.2.5",
-    "mongoose": "^5.5.11",
+    "mongoose": "^5.7.5",
     "mongoose-version": "^1.1.0",
     "pino": "^5.12.5",
     "popper.js": "^1.15.0",
